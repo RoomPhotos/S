@@ -10,7 +10,7 @@
         <label for="topic">Choose a topic:</label>
         <select id="topic" name="topic">
 		<option value="The Oaks on Sussex - Staff Management - Perry, Aaron">Aaron Perry</option>
-            	<option value="The Oaks on Sussex - Staff Management - Munro, Charles">Charles Munro</option>
+        <option value="The Oaks on Sussex - Staff Management - Munro, Charles">Charles Munro</option>
 		<option value="The Oaks on Sussex - Staff Management - Dyson, Christopher">Christopher Dyson</option>
 		<option value="The Oaks on Sussex - Staff Management - Howison, Dale">Dale Howison</option>
 		<option value="The Oaks on Sussex - Staff Management - Makotter, Danielle">Danielle Makotter</option>
@@ -27,11 +27,11 @@
 		<option value="The Oaks on Sussex - Staff Management - Newington, Paul">Paul Newington</option>
 		<option value="The Oaks on Sussex - Staff Management - Simeon, Peter">Peter Simeon</option>
 		<option value="The Oaks on Sussex - Staff Management - Williams, Raymond">Raymond Williams</option>            
-          	<option value="The Oaks on Sussex - Staff Management - Ward, Richard">Richard Ward</option>
+        <option value="The Oaks on Sussex - Staff Management - Ward, Richard">Richard Ward</option>
 		<option value="The Oaks on Sussex - Staff Management - Hunter, Robert">Robert Hunter</option>
 		<option value="The Oaks on Sussex - Staff Management - Goldney, Steven">Steven Goldney</option>
 		<option value="The Oaks on Sussex - Staff Management - Fantasia, Tony">Tony Fantasia</option>
-            	<option value="The Oaks on Sussex - Staff Management - Graham-Warman, Tony">Tony Graham-Warman</option>
+        <option value="The Oaks on Sussex - Staff Management - Graham-Warman, Tony">Tony Graham-Warman</option>
         </select>
         
         <br><br>
@@ -40,8 +40,16 @@
         <textarea id="message" name="message" rows="4" cols="40"></textarea>
         
         <br><br>
-        
-        <button type="button" onclick="sendEmail()">Create Email Draft</button>
+
+		<form action="/upload-destination" method="POST" enctype="multipart/form-data">
+ 			<label for="image-picker">Choose images to upload:</label>
+  			<input type="file" id="image-picker" name="image" accept="image/*">
+  			<button type="submit">Upload</button>
+		</form>
+		
+		<br><br>
+		
+        <button type="button" onclick="sendEmail()">Send Email</button>
     </form>
 
     <script>
