@@ -7,8 +7,8 @@
 <body>
 
     <form id="emailForm">
-        <label for="topic">Choose a topic:</label>
-        <select id="topic" name="topic">
+        <label for="participant">Choose a Participant:</label>
+        <select id="participant" name="participant">
 		<option value="Sussex - Perry, Aaron">Aaron Perry</option>
         <option value="Sussex - Munro, Charles">Charles Munro</option>
 		<option value="Sussex - Dyson, Christopher">Christopher Dyson</option>
@@ -48,7 +48,7 @@
         function sendEmail() {
             const recipient = "roomphotos@mightyoak.com.au";
             const messageBody = document.getElementById('message').value;
-            const subject = document.getElementById('topic').value;
+            const subject = document.getElementById('participant').value;
             const body = encodeURIComponent(messageBody);
             
             // Opens the user's default mail client (Outlook, Apple Mail, Gmail, etc.)
