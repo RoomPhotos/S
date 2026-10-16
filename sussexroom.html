@@ -26,7 +26,7 @@
 		<option value="The Oaks on Sussex - Staff Management - Lawrie, Mitchell">Mitchell Lawrie</option>
 		<option value="The Oaks on Sussex - Staff Management - Newington, Paul">Paul Newington</option>
 		<option value="The Oaks on Sussex - Staff Management - Simeon, Peter">Peter Simeon</option>
-		<option value="The Oaks on Sussex - Staff Management - Williams, Raymond">Raymond Williams</option>
+		<option value="The Oaks on Sussex - Staff Management - Williams, Raymond">Raymond Williams</option>            
         <option value="The Oaks on Sussex - Staff Management - Ward, Richard">Richard Ward</option>
 		<option value="The Oaks on Sussex - Staff Management - Hunter, Robert">Robert Hunter</option>
 		<option value="The Oaks on Sussex - Staff Management - Goldney, Steven">Steven Goldney</option>
@@ -40,11 +40,6 @@
         <textarea id="message" name="message" rows="4" cols="40"></textarea>
         
         <br><br>
-
-		<label for="image-picker">Choose images to upload (you can select multiple):</label>
-  		<input type="file" id="image-picker" name="images" accept="image/*" multiple>
-				
-		<br><br>
 		
         <button type="button" onclick="sendEmail()">Send Email</button>
     </form>
@@ -52,21 +47,16 @@
     <script>
         function sendEmail() {
             const recipient = "roomphotos@mightyoak.com.au";
-            const messageBody = document.getElementById('message').value || '';
-            const subject = document.getElementById('topic').value || '';
-            const files = document.getElementById('image-picker').files;
-
-            let fileListText = '';
-            if (files && files.length > 0) {
-                const names = Array.from(files).map(f => f.name);
-                fileListText = '\n\nSelected files:\n' + names.join('\n');
-            }
-
-            const body = encodeURIComponent(messageBody + fileListText + '\n\n(If you want these files attached, please add them manually to your email client; mailto: links cannot attach files automatically.)');
-
-            window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
+            const messageBody = document.getElementById('message').value;
+            const subject = document.getElementById('topic').value;
+            const body = encodeURIComponent(messageBody);
+            
+            // Opens the user's default mail client (Outlook, Apple Mail, Gmail, etc.)
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body};
         }
     </script>
 
+</body>
+</html>
 </body>
 </html>
