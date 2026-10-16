@@ -49,10 +49,11 @@
             const recipient = "roomphotos@mightyoak.com.au";
             const messageBody = document.getElementById('message').value;
             const subject = document.getElementById('participant').value;
+            const encodedSubject = encodeURIComponent(subject);
             const body = encodeURIComponent(messageBody);
             
             // Opens the user's default mail client (Outlook, Apple Mail, Gmail, etc.)
-            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body};
+            window.location.href = `mailto:${recipient}?subject=${encodedSubject}&body=${body}`;
         }
     </script>
 
