@@ -43,7 +43,6 @@
 
 		<label for="image-picker">Choose images to upload:</label>
   		<input type="file" id="image-picker" name="image" accept="image/*">
-  		<button type="submit">Upload</button>
 				
 		<br><br>
 		
@@ -56,9 +55,10 @@
             const messageBody = document.getElementById('message').value;
             const subject = document.getElementById('topic').value;
             const body = encodeURIComponent(messageBody);
+			const attachment = document.getElementById('image-picker').value;
             
             // Opens the user's default mail client (Outlook, Apple Mail, Gmail, etc.)
-            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}&attachment=${attachment}`;
         }
     </script>
 
